@@ -427,7 +427,8 @@ N.forEach((n,i)=>{const g=mk('g',{class:'node',tabindex:0,role:'button'},ng);mk(
 const t=mk('text',{x:n[1],y:n[2]+5,'text-anchor':'middle'},g);t.textContent=n[0];t.style.fontSize='14px';nodes[i]=g});
 function pick(i){nodes.forEach((g,k)=>{const rel=k===i||E.some(e=>(e.a===i&&e.b===k)||(e.b===i&&e.a===k));g.classList.toggle('on',k===i);g.classList.toggle('dim',!rel)});
 E.forEach(e=>{const r=e.a===i||e.b===i;e.el.classList.toggle('on',r);e.el.classList.toggle('dim',!r)});
-$('#ecoh').textContent=i===5?'Digital networks':N[i][0];$('#ecop').textContent=i===5?'The shared layer connecting every actor, so a single message can reach all of them within minutes.':N[i][3];$('#ecoindex').textContent='FIELD NOTE '+String(i===5?6:i+1).padStart(2,'0')+' / 05';$('#ecosymbol').textContent=String(i===5?6:i+1).padStart(2,'0');$('#ecokicker').textContent=['THE FIRST VOICE','POLITICAL ACTORS','PUBLIC RECORD','NETWORKED PUBLIC','CIVIC RESPONSE','THE CONNECTIVE LAYER'][i]
+$('#ecoh').textContent=i===5?'Digital networks':N[i][0];$('#ecop').textContent=i===5?'The shared layer connecting every actor, so a single message can reach all of them within minutes.':N[i][3];$('#ecoindex').textContent='FIELD NOTE '+String(i===5?6:i+1).padStart(2,'0')+' / 05';$('#ecosymbol').textContent=String(i===5?6:i+1).padStart(2,'0');$('#ecokicker').textContent=['THE FIRST VOICE','POLITICAL ACTORS','PUBLIC RECORD','NETWORKED PUBLIC','CIVIC RESPONSE','THE CONNECTIVE LAYER'][i];
+}
 nodes.forEach((g,i)=>{g.onclick=()=>pick(i);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}}});
 pick(0);
 // flowchart
