@@ -256,6 +256,54 @@ footer b{color:var(--ink)}
   @keyframes grainDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-8px,5px,0)}}
 }
 
+
+/* Richer editorial cards and diagram surfaces */
+.split{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(280px,.88fr);gap:22px;align-items:stretch}
+.split>.panel,#flow .panel{background:linear-gradient(145deg,#fff 0%,#f7f6f2 100%);border:1px solid #c9c5bd;border-radius:3px;box-shadow:0 14px 34px rgba(18,16,12,.07),0 2px 5px rgba(18,16,12,.04);overflow:hidden}
+.split>.panel:first-child{padding:clamp(14px,2vw,26px);position:relative}
+.split>.panel:first-child:before,#flow .panel:before{content:"INFORMATION NETWORK / 01";display:block;font:9px Arial,sans-serif;letter-spacing:.17em;color:#777;padding:0 0 13px;border-bottom:1px solid #dedbd4;margin-bottom:8px}
+.split svg{display:block;width:100%;height:auto;min-height:310px;overflow:visible}
+#nodes .node{cursor:pointer;outline:none;transition:opacity .2s}
+#nodes .node rect,#nodes .node circle{fill:#fff;stroke:#a9a49b;stroke-width:1.6;transition:fill .2s,stroke .2s,filter .2s}
+#nodes .node text{fill:#26231f;font:12px Georgia,serif;pointer-events:none}
+#nodes .node:hover rect,#nodes .node:hover circle,#nodes .node.on rect,#nodes .node.on circle{fill:#171717;stroke:#171717;filter:drop-shadow(0 4px 5px rgba(0,0,0,.18))}
+#nodes .node:hover text,#nodes .node.on text{fill:#fff}
+#nodes .node.dim{opacity:.28}
+#edges .edge{stroke:#b4afa6;stroke-width:1.8;opacity:.75;transition:opacity .2s,stroke .2s}
+#edges .edge.on{stroke:#171717;stroke-width:2.6;opacity:1}
+#edges .edge.dim{opacity:.12}
+.actor-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:390px;padding:0!important;background:#171717!important;color:#f6f3ec!important;border:1px solid #171717!important;box-shadow:0 16px 36px rgba(0,0,0,.13)!important;overflow:hidden}
+.actor-card:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-115px;bottom:35px;box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.02);pointer-events:none}
+.actor-card-top,.actor-card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:17px 20px;font:9px Arial,sans-serif;letter-spacing:.13em;color:#b8b4ac}
+.actor-card-top{border-bottom:1px solid rgba(255,255,255,.18)}
+.actor-live{display:flex;align-items:center;gap:7px}
+.actor-live i{width:6px;height:6px;border-radius:50%;background:#b5c6a9;display:inline-block;box-shadow:0 0 0 4px rgba(181,198,169,.13)}
+.actor-card-body{position:relative;z-index:1;padding:32px 26px}
+.actor-symbol{font:clamp(64px,8vw,100px)/.9 Georgia,serif;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);letter-spacing:-.08em;margin-bottom:28px}
+.actor-kicker{font:9px Arial,sans-serif!important;letter-spacing:.2em;color:#c7b99e!important;margin:0 0 10px!important}
+.actor-card h3{font:clamp(27px,3vw,39px)/1.02 Georgia,serif!important;letter-spacing:-.04em;color:#fff!important;margin:0 0 17px!important;max-width:340px}
+.actor-card #ecop{font:15px/1.65 Georgia,serif!important;color:#d0cdc6!important;max-width:390px;margin:0!important}
+.actor-card-foot{border-top:1px solid rgba(255,255,255,.18);position:relative;z-index:1}
+.actor-card-foot span:last-child{font-size:17px;color:#fff}
+#flow .panel{padding:clamp(16px,2.5vw,30px);position:relative}
+#flow .panel:before{margin-bottom:20px}
+#fl{display:block;width:100%;height:auto;max-width:700px;margin:0 auto}
+#fl rect{stroke-width:1.7!important;filter:drop-shadow(0 2px 2px rgba(0,0,0,.045))}
+#fl text{font-family:Georgia,serif!important;font-size:14px!important;letter-spacing:.01em}
+#fl g[data-b="0"] rect{fill:#fff!important;stroke:#77736c!important}
+#fl g[data-b="A"] rect{fill:#f0f3ed!important;stroke:#657a61!important}
+#fl g[data-b="B"] rect{fill:#f6eeeb!important;stroke:#a86e61!important}
+#fl g[data-b="S"] rect{fill:#171717!important;stroke:#171717!important}
+#fl g[data-b="S"] text{fill:#fff!important}
+#fl path.edge{stroke:#858078;stroke-width:1.8}
+#fl path[data-b="S"]{stroke:#171717;stroke-width:2.4}
+#fl [data-b].dim{opacity:.14}
+#ft{gap:8px;flex-wrap:wrap;margin:18px 0 14px}
+#ft button{border:1px solid #d0ccc4;background:#fff;padding:9px 13px;border-radius:2px;font:9px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+#ft button[aria-pressed="true"]{background:#171717;color:#fff;border-color:#171717}
+#pillars .pill>.panel{border:1px solid #d2cec6;border-radius:3px;background:linear-gradient(145deg,#fff,#f7f6f2);padding:22px;box-shadow:0 8px 20px rgba(0,0,0,.045)}
+@media(max-width:760px){.split{grid-template-columns:1fr}.actor-card{min-height:340px}.actor-card-body{padding:25px 22px}.split svg{min-height:0}}
+
 </style>
 </head>
 <body>
@@ -306,7 +354,11 @@ footer b{color:var(--ink)}
 <div class="panel"><svg viewBox="0 0 700 460" role="img" aria-label="Political communication ecosystem diagram">
 <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker></defs>
 <g id="edges"></g><g id="nodes"></g></svg></div>
-<div class="panel side" aria-live="polite"><h3 id="ecoh">Choose an actor</h3><p id="ecop">Tap or select any node to highlight its information flows and read its role in a crisis.</p></div>
+<aside class="panel side actor-card" aria-live="polite">
+<div class="actor-card-top"><span id="ecoindex">FIELD NOTE 01 / 05</span><span class="actor-live"><i></i> INTERACTIVE MAP</span></div>
+<div class="actor-card-body"><div class="actor-symbol" aria-hidden="true" id="ecosymbol">01</div><p class="actor-kicker" id="ecokicker">THE FIRST VOICE</p><h3 id="ecoh">Government &amp; institutions</h3><p id="ecop">Issues official statements, holds legal authority and answers to parliament, courts and voters. Slow or unclear messaging leaves space for rumour.</p></div>
+<div class="actor-card-foot"><span>SELECT ANOTHER NODE TO EXPLORE</span><span>↗</span></div>
+</aside>
 </div>
 </div></section>
 
@@ -375,8 +427,9 @@ N.forEach((n,i)=>{const g=mk('g',{class:'node',tabindex:0,role:'button'},ng);mk(
 const t=mk('text',{x:n[1],y:n[2]+5,'text-anchor':'middle'},g);t.textContent=n[0];t.style.fontSize='14px';nodes[i]=g});
 function pick(i){nodes.forEach((g,k)=>{const rel=k===i||E.some(e=>(e.a===i&&e.b===k)||(e.b===i&&e.a===k));g.classList.toggle('on',k===i);g.classList.toggle('dim',!rel)});
 E.forEach(e=>{const r=e.a===i||e.b===i;e.el.classList.toggle('on',r);e.el.classList.toggle('dim',!r)});
-$('#ecoh').textContent=i===5?'Digital networks':N[i][0];$('#ecop').textContent=i===5?'The shared layer connecting every actor, so a single message can reach all of them within minutes.':N[i][3]}
+$('#ecoh').textContent=i===5?'Digital networks':N[i][0];$('#ecop').textContent=i===5?'The shared layer connecting every actor, so a single message can reach all of them within minutes.':N[i][3];$('#ecoindex').textContent='FIELD NOTE '+String(i===5?6:i+1).padStart(2,'0')+' / 05';$('#ecosymbol').textContent=String(i===5?6:i+1).padStart(2,'0');$('#ecokicker').textContent=['THE FIRST VOICE','POLITICAL ACTORS','PUBLIC RECORD','NETWORKED PUBLIC','CIVIC RESPONSE','THE CONNECTIVE LAYER'][i]
 nodes.forEach((g,i)=>{g.onclick=()=>pick(i);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}}});
+pick(0);
 // flowchart
 const F=$('#fl');mk('defs',{},F).innerHTML='<marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker>';
 const fn=[["Political event",350,20,"0"],["Information spreads online",350,92,"0"],["Public reaction",350,164,"0"],["Information verification",350,236,"0"],
