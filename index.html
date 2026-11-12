@@ -177,6 +177,26 @@ footer b{color:var(--ink)}
  .links a{font-size:8px}
 }
 
+
+/* Diagram legibility: explicit SVG paint values prevent black-on-black fallback */
+:root{--panel:#fff;--ok:#777;--acc:#9a4a43;--sig:#242424}
+:root[data-theme="dark"]{--panel:#242424;--ok:#b7c5b8;--acc:#d58c83;--sig:#eee}
+#fl rect{fill:var(--panel)!important;stroke:#777!important;stroke-width:1.5}
+#fl text{fill:var(--ink)!important;font-family:Arial,sans-serif;font-size:13px}
+#fl g[data-b="A"] rect{stroke:var(--ok)!important}
+#fl g[data-b="B"] rect{stroke:var(--acc)!important}
+#fl g[data-b="S"] rect{fill:var(--sig)!important;stroke:var(--sig)!important}
+#fl g[data-b="S"] text{fill:#fff!important;font-weight:600}
+#fl path.edge{fill:none;stroke:#777;stroke-width:1.5}
+#fl path[data-b="S"]{stroke:var(--sig);stroke-dasharray:6 5}
+.documentary-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;margin:30px 0 34px;align-items:start}
+.documentary-photo{margin:0;min-width:0}
+.documentary-photo img{display:block;width:100%;height:clamp(210px,30vw,350px);object-fit:cover;filter:grayscale(100%) contrast(1.04)}
+.documentary-photo.lead img{height:clamp(250px,36vw,410px)}
+.documentary-photo figcaption{display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--ink);padding-top:9px;margin-top:8px;color:var(--muted);font:10px/1.55 Arial,sans-serif}
+.documentary-photo figcaption span:first-child{color:var(--ink);letter-spacing:.13em;font-size:9px}
+@media(max-width:680px){.documentary-grid{grid-template-columns:1fr;gap:24px}.documentary-photo img,.documentary-photo.lead img{height:auto;max-height:380px;object-fit:cover}}
+
 </style>
 </head>
 <body>
@@ -242,6 +262,16 @@ footer b{color:var(--ink)}
 <section id="case"><div class="wrap">
 <div class="sh"><div><small>Case study</small></div><div><h2>Seoul, December 2024</h2><p>Select an event on the timeline. Visibility online mattered, but the decisive acts were constitutional ones taken by the National Assembly.</p></div></div>
 <div class="case-note"><span>THE NIGHT IN CONTEXT</span><p>In the hours between the declaration and its reversal, images and eyewitness accounts circulated widely. But the constitutional response came from elected representatives inside the National Assembly.</p></div>
+<div class="documentary-grid" aria-label="Photographs from the South Korean martial law crisis">
+  <figure class="documentary-photo lead">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg/960px-2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg" alt="Citizens gather at a nighttime protest in Seoul on 4 December 2024" loading="lazy">
+    <figcaption><span>01 / PUBLIC RESPONSE</span><span>Anti-martial-law protest, Seoul · 4 December 2024. Photo: Hashflu / Wikimedia Commons, CC BY-SA 4.0.</span></figcaption>
+  </figure>
+  <figure class="documentary-photo">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png/960px-South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png" alt="South Korean soldiers form a line outside the National Assembly on 4 December 2024" loading="lazy">
+    <figcaption><span>02 / INSTITUTIONAL TENSION</span><span>Soldiers outside the National Assembly · 4 December 2024. Photo: mujjingun / Wikimedia Commons, public domain.</span></figcaption>
+  </figure>
+</div>
 <div class="panel"><div class="tl" id="tl"></div><div class="detail" id="tlcap" aria-live="polite"></div></div>
 </div></section>
 
