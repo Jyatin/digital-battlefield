@@ -92,6 +92,19 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 @media(max-width:860px){.links{gap:14px}.sh{grid-template-columns:130px 1fr}.split{grid-template-columns:1fr}.pill{grid-template-columns:repeat(2,1fr)}.pill .panel:nth-child(odd){padding-left:0;border-left:0}.pill .panel{border-bottom:1px solid var(--rule);padding:18px}.pill .panel:last-child{border-bottom:0}.cards{grid-template-columns:1fr}.card,.card+.card{padding:22px 0;border-left:0;border-bottom:1px solid var(--rule)}.card:last-child{border-bottom:0}.stats .wrap{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:0}.hero{padding:66px 0 58px}}
 @media(max-width:600px){.wrap{width:calc(100% - 34px)}header.top .wrap{gap:12px;min-height:60px}.links{max-width:58vw}.links a{font-size:10px}.logo{font-size:15px}.tbtn{font-size:10px;padding:7px}.hero h1{font-size:clamp(43px,13vw,65px)}.hero p{font-size:16px}.hero .byline{gap:10px}.sh{grid-template-columns:1fr;gap:13px}.sh small{width:max-content}.sh h2{font-size:36px}section{padding:55px 0}.panel{padding:14px}.stats .wrap{grid-template-columns:1fr 1fr}.stat{padding:16px 10px}.stat b{font-size:22px}.stat span{font-size:10px}.pill{grid-template-columns:1fr 1fr}.pill .panel{padding:16px 10px}.pill .panel:nth-child(even){border-left:1px solid var(--rule);padding-left:14px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Documentary photography */
+.photo-feature{margin:42px 0 0;position:relative}
+.photo-feature img{display:block;width:100%;height:clamp(250px,43vw,470px);object-fit:cover;object-position:center 43%;filter:saturate(.82)}
+.photo-feature figcaption,.photo-pair figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:10px 0 0;color:var(--muted);font:11px/1.5 Arial,sans-serif;letter-spacing:.02em}
+.photo-feature figcaption a,.photo-pair figcaption a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.photo-pair{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin:0 0 28px}
+.photo-pair figure{margin:0;min-width:0}
+.photo-pair img{display:block;width:100%;height:clamp(190px,25vw,300px);object-fit:cover;filter:saturate(.82)}
+.photo-pair figure:first-child img{object-position:center 45%}
+.photo-pair figure:last-child img{object-position:center 48%}
+@media(max-width:640px){.photo-pair{grid-template-columns:1fr;gap:20px}.photo-pair img{height:240px}.photo-feature{margin-top:30px}}
+
 </style>
 </head>
 <body>
@@ -107,6 +120,7 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 <p>A closer look at how social platforms shape the speed, visibility and interpretation of political crises — through the events that unfolded in South Korea in December 2024.</p>
 <div class="byline"><span>Field notes in political communication</span><span>Case study · Seoul, 2024</span><span>Interactive essay</span></div>
 <div class="btns"><a class="btn p" href="#case">Read the case study&nbsp; ↘</a><a class="btn s" href="#eco">Explore the communication network</a></div>
+<figure class="photo-feature"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg?width=1800" alt="Citizens gather during an anti-martial-law protest in South Korea on 4 December 2024" loading="eager"><figcaption><span>Seoul, 4 December 2024 · Citizens gather in protest after the martial law declaration</span><span>Photograph: Hashflu / <a href="https://commons.wikimedia.org/wiki/File:2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
 </div></div>
 
 <div class="stats"><div class="wrap">
@@ -145,6 +159,7 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 
 <section id="case"><div class="wrap">
 <div class="sh"><div><small>Case study</small></div><div><h2>Seoul, December 2024</h2><p>Select an event on the timeline. Visibility online mattered, but the decisive acts were constitutional ones taken by the National Assembly.</p></div></div>
+<div class="photo-pair"><figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/South_Korean_soldiers_outside_the_National_Assembly.png?width=1200" alt="South Korean soldiers outside the National Assembly on 4 December 2024" loading="lazy"><figcaption><span>Soldiers outside the National Assembly · 4 December 2024</span><span>Photo: mujjingun · <a href="https://commons.wikimedia.org/wiki/File:South_Korean_soldiers_outside_the_National_Assembly.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Public domain</span></figcaption></figure><figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png?width=1200" alt="South Korean soldiers form a line outside the National Assembly" loading="lazy"><figcaption><span>Military presence at the Assembly grounds</span><span>Photo: mujjingun · <a href="https://commons.wikimedia.org/wiki/File:South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Public domain</span></figcaption></figure></div>
 <div class="panel"><div class="tl" id="tl"></div><div class="detail" id="tlcap" aria-live="polite"></div></div>
 </div></section>
 
@@ -174,16 +189,6 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 const $=s=>document.querySelector(s),NS="http://www.w3.org/2000/svg";
 const mk=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
 $('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'};
-// hero network
-(()=>{const c=$('#net'),x=c.getContext('2d');let W,H,P=[];
-function size(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;P=Array.from({length:Math.min(40,W/12|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()<.14}))}
-size();addEventListener('resize',size);const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function draw(){x.clearRect(0,0,W,H);
-for(const p of P){if(!rm){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}}
-for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<110){x.globalAlpha=(1-d/110)*.5;x.strokeStyle=(a.r||b.r)?'#ff6a70':'#7aa5ff';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
-x.globalAlpha=.95;for(const p of P){x.fillStyle=p.r?'#ff6a70':'#9db9ff';x.beginPath();x.arc(p.x,p.y,p.r?4:2.4,0,7);x.fill()}
-if(!rm)requestAnimationFrame(draw)}
-draw()})();
 // ecosystem
 const N=[["Government & institutions",350,50,"Issues official statements, holds legal authority and answers to parliament, courts and voters. Slow or unclear messaging leaves space for rumour."],
 ["Political parties",597,174,"Mobilise supporters and contest the official account. Their framing can calm a crisis or deepen polarisation."],
