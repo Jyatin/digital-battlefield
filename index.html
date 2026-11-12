@@ -93,17 +93,89 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 @media(max-width:600px){.wrap{width:calc(100% - 34px)}header.top .wrap{gap:12px;min-height:60px}.links{max-width:58vw}.links a{font-size:10px}.logo{font-size:15px}.tbtn{font-size:10px;padding:7px}.hero h1{font-size:clamp(43px,13vw,65px)}.hero p{font-size:16px}.hero .byline{gap:10px}.sh{grid-template-columns:1fr;gap:13px}.sh small{width:max-content}.sh h2{font-size:36px}section{padding:55px 0}.panel{padding:14px}.stats .wrap{grid-template-columns:1fr 1fr}.stat{padding:16px 10px}.stat b{font-size:22px}.stat span{font-size:10px}.pill{grid-template-columns:1fr 1fr}.pill .panel{padding:16px 10px}.pill .panel:nth-child(even){border-left:1px solid var(--rule);padding-left:14px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
-/* Documentary photography */
-.photo-feature{margin:42px 0 0;position:relative}
-.photo-feature img{display:block;width:100%;height:clamp(250px,43vw,470px);object-fit:cover;object-position:center 43%;filter:saturate(.82)}
-.photo-feature figcaption,.photo-pair figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:10px 0 0;color:var(--muted);font:11px/1.5 Arial,sans-serif;letter-spacing:.02em}
-.photo-feature figcaption a,.photo-pair figcaption a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
-.photo-pair{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin:0 0 28px}
-.photo-pair figure{margin:0;min-width:0}
-.photo-pair img{display:block;width:100%;height:clamp(190px,25vw,300px);object-fit:cover;filter:saturate(.82)}
-.photo-pair figure:first-child img{object-position:center 45%}
-.photo-pair figure:last-child img{object-position:center 48%}
-@media(max-width:640px){.photo-pair{grid-template-columns:1fr;gap:20px}.photo-pair img{height:240px}.photo-feature{margin-top:30px}}
+
+
+/* Magazine-spread art direction */
+:root{--paper:#fff;--surface:#fff;--ink:#111;--muted:#666;--rule:#d7d7d7;--accent:#171717;--blue:#444;--green:#555;--night:#111;color-scheme:light}
+:root[data-theme="dark"]{--paper:#171717;--surface:#1d1d1d;--ink:#f2f0eb;--muted:#aaa59d;--rule:#444;--accent:#f2f0eb;--blue:#c7c2b9;--green:#aaa;--night:#080808;color-scheme:dark}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--paper);font-size:16px;line-height:1.65}
+.wrap{width:min(1180px,calc(100% - 64px))}
+header.top{background:var(--paper);border-bottom:1px solid var(--ink)}
+header.top .wrap{min-height:54px}
+.logo{font-size:14px;text-transform:uppercase;letter-spacing:.1em}
+.logo span{color:var(--ink);font-style:normal}
+header.top a{font-size:10px;letter-spacing:.1em}
+.tbtn{border-color:var(--ink);border-radius:0;text-transform:uppercase;font-size:10px}
+.hero{padding:48px 0 30px;background:var(--paper)}
+.hero .wrap{max-width:1180px}
+.cover{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(240px,.8fr);gap:5.5%;align-items:start;min-height:clamp(390px,48vw,620px)}
+.cover-title{display:flex;flex-direction:column;align-items:flex-start;font-family:"Bodoni 72","Didot", "Times New Roman",serif;font-size:clamp(76px,13.2vw,178px);font-weight:400;line-height:.72;letter-spacing:-.085em;text-transform:uppercase;padding-top:14px}
+.cover-title span:nth-child(2){margin-left:.06em}
+.cover-title span:nth-child(3){font-size:.63em;letter-spacing:-.075em;white-space:nowrap;margin-top:.12em}
+.period{font-size:.8em}
+.cover-quote{padding:22px 4px 0 0;max-width:340px}
+.quote-mark{font:90px/.6 Georgia,serif;margin:0 0 18px}
+.cover-quote blockquote{font:clamp(25px,3vw,39px)/1.06 Georgia,serif;letter-spacing:-.045em;text-transform:uppercase;margin:0}
+.quote-credit{font:9px/1.7 Arial,sans-serif;letter-spacing:.14em;margin-top:28px;color:var(--muted)}
+.cover-bottom{display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:start;border-top:1px solid var(--ink);padding:17px 0 20px}
+.cover-deck{font:clamp(19px,2.1vw,26px)/1.3 Georgia,serif;max-width:590px;margin:0}
+.cover-copy{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.cover-copy p{font:12px/1.6 Georgia,serif;margin:0;color:var(--muted)}
+.cover-copy b{font:700 9px Arial,sans-serif;letter-spacing:.14em;color:var(--ink)}
+.cover-meta{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--ink);padding-top:9px;font:9px Arial,sans-serif;letter-spacing:.13em}
+.stats{background:var(--paper);border-bottom:1px solid var(--ink)}
+.stats .wrap{grid-template-columns:repeat(4,1fr)}
+.stat{border-left:1px solid var(--rule);padding:17px 18px}
+.stat:first-child{border-left:0}
+.stat b{font-size:27px;color:var(--ink)}
+.stat span{font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+section{padding:76px 0}
+section+section{border-top:1px solid var(--ink)}
+.sh{grid-template-columns:150px 1fr;gap:32px;margin-bottom:32px}
+.sh small{font-size:9px;color:var(--muted);border-color:var(--ink)}
+.sh h2{font-size:clamp(38px,5vw,62px);line-height:.98;letter-spacing:-.055em;text-transform:uppercase}
+.sh p{font-size:15px;max-width:560px}
+.cards{border-color:var(--ink)}
+.card{padding-top:20px}
+.card+.card{border-color:var(--rule)}
+.card .tag{font-size:9px;color:var(--muted)}
+.card h3{font-size:27px}
+.card p{font-size:14px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:0;box-shadow:none}
+.split{gap:20px}
+.side h3{font-size:28px}
+.pill{border-color:var(--ink)}
+.pill .panel{border-radius:0}
+.pill h3{font-size:23px}
+.case-note{display:grid;grid-template-columns:150px 1fr;gap:30px;border-top:1px solid var(--ink);padding:18px 0 25px;margin-bottom:8px}
+.case-note span{font:9px Arial,sans-serif;letter-spacing:.15em}
+.case-note p{max-width:700px;margin:0;font:20px/1.4 Georgia,serif}
+.refs{padding:24px 0;border:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+footer{background:var(--paper);color:var(--muted);border-top:1px solid var(--ink)}
+footer b{color:var(--ink)}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 36px)}
+ .cover{grid-template-columns:1fr;gap:26px;min-height:0}
+ .cover-title{font-size:clamp(68px,17vw,130px)}
+ .cover-title span:nth-child(3){font-size:.55em}
+ .cover-quote{padding:0 0 20px 12px;max-width:450px;border-left:1px solid var(--ink)}
+ .quote-mark{display:none}
+ .cover-quote blockquote{font-size:25px}
+ .cover-bottom{grid-template-columns:1fr;gap:18px}
+ .cover-copy{gap:14px}
+ .cover-meta{font-size:8px;letter-spacing:.06em}
+ .sh{grid-template-columns:1fr;gap:12px}
+ .case-note{grid-template-columns:1fr;gap:8px}
+}
+@media(max-width:520px){
+ .cover-title{font-size:16vw;letter-spacing:-.09em}
+ .cover-title span:nth-child(3){font-size:.51em}
+ .stats .wrap{grid-template-columns:repeat(2,1fr)}
+ .stat:nth-child(3){border-left:0}
+ .cover-meta span:nth-child(2){display:none}
+ .links{gap:10px}
+ .links a{font-size:8px}
+}
 
 </style>
 </head>
@@ -115,12 +187,22 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 </div></header>
 
 <div class="hero"><div class="wrap">
-<p class="eyebrow">POL371 &nbsp; / &nbsp; Political crisis management and communication</p>
-<h1>When politics<br>meets the <em>feed.</em></h1>
-<p>A closer look at how social platforms shape the speed, visibility and interpretation of political crises — through the events that unfolded in South Korea in December 2024.</p>
-<div class="byline"><span>Field notes in political communication</span><span>Case study · Seoul, 2024</span><span>Interactive essay</span></div>
-<div class="btns"><a class="btn p" href="#case">Read the case study&nbsp; ↘</a><a class="btn s" href="#eco">Explore the communication network</a></div>
-<figure class="photo-feature"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg?width=1800" alt="Citizens gather during an anti-martial-law protest in South Korea on 4 December 2024" loading="eager"><figcaption><span>Seoul, 4 December 2024 · Citizens gather in protest after the martial law declaration</span><span>Photograph: Hashflu / <a href="https://commons.wikimedia.org/wiki/File:2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+<div class="cover">
+  <div class="cover-title"><span>THE</span><span>DIGITAL</span><span>BATTLEFIELD<span class="period">.</span></span></div>
+  <aside class="cover-quote">
+    <p class="quote-mark">“</p>
+    <blockquote>In a political crisis, the first battle is over what people believe is happening.</blockquote>
+    <p class="quote-credit">NOTES ON CRISIS COMMUNICATION<br>SEOUL · DECEMBER 2024</p>
+  </aside>
+</div>
+<div class="cover-bottom">
+  <p class="cover-deck">How social media shapes political crises — and how information, institutions and public action collide when events move faster than official explanations.</p>
+  <div class="cover-copy">
+    <p><b>THE CASE</b><br>South Korea’s declaration of martial law on 3 December 2024 became a defining test of democratic institutions and networked public communication.</p>
+    <p><b>THE QUESTION</b><br>Who gets to define a crisis while it is still unfolding: governments, journalists, platforms or the people watching?</p>
+  </div>
+</div>
+<div class="cover-meta"><span>POL371 / POLITICAL CRISIS MANAGEMENT</span><span>AN INTERACTIVE EDITORIAL</span><span>01 — 06</span></div>
 </div></div>
 
 <div class="stats"><div class="wrap">
@@ -159,7 +241,7 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 
 <section id="case"><div class="wrap">
 <div class="sh"><div><small>Case study</small></div><div><h2>Seoul, December 2024</h2><p>Select an event on the timeline. Visibility online mattered, but the decisive acts were constitutional ones taken by the National Assembly.</p></div></div>
-<div class="photo-pair"><figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/South_Korean_soldiers_outside_the_National_Assembly.png?width=1200" alt="South Korean soldiers outside the National Assembly on 4 December 2024" loading="lazy"><figcaption><span>Soldiers outside the National Assembly · 4 December 2024</span><span>Photo: mujjingun · <a href="https://commons.wikimedia.org/wiki/File:South_Korean_soldiers_outside_the_National_Assembly.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Public domain</span></figcaption></figure><figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png?width=1200" alt="South Korean soldiers form a line outside the National Assembly" loading="lazy"><figcaption><span>Military presence at the Assembly grounds</span><span>Photo: mujjingun · <a href="https://commons.wikimedia.org/wiki/File:South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png" target="_blank" rel="noopener">Wikimedia Commons</a> · Public domain</span></figcaption></figure></div>
+<div class="case-note"><span>THE NIGHT IN CONTEXT</span><p>In the hours between the declaration and its reversal, images and eyewitness accounts circulated widely. But the constitutional response came from elected representatives inside the National Assembly.</p></div>
 <div class="panel"><div class="tl" id="tl"></div><div class="detail" id="tlcap" aria-live="polite"></div></div>
 </div></section>
 
