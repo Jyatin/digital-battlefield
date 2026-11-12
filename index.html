@@ -197,6 +197,65 @@ footer b{color:var(--ink)}
 .documentary-photo figcaption span:first-child{color:var(--ink);letter-spacing:.13em;font-size:9px}
 @media(max-width:680px){.documentary-grid{grid-template-columns:1fr;gap:24px}.documentary-photo img,.documentary-photo.lead img{height:auto;max-height:380px;object-fit:cover}}
 
+
+/* High-contrast monochrome cover */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:#080808!important;color:#f7f5f0!important;
+  padding:clamp(54px,7vw,96px) 0 32px;
+}
+.hero:before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 78% 42%,rgba(255,255,255,.12),transparent 38%),
+    radial-gradient(circle at 1px 1px,rgba(255,255,255,.20) 1px,transparent 1.6px);
+  background-size:auto,7px 7px;
+  opacity:.38;
+  mask-image:linear-gradient(90deg,transparent 0%,#000 48%,#000 100%);
+}
+.hero:after{
+  content:"12·03";position:absolute;z-index:-1;pointer-events:none;
+  right:-.035em;bottom:-.31em;color:transparent;
+  -webkit-text-stroke:1px rgba(255,255,255,.13);
+  font:normal clamp(190px,34vw,470px)/.8 "Times New Roman",serif;
+  letter-spacing:-.09em;white-space:nowrap;
+}
+.hero .wrap{position:relative;max-width:1320px}
+.cover{min-height:clamp(410px,48vw,650px);align-items:center}
+.cover-title{color:#f7f5f0;font-size:clamp(82px,13.5vw,190px);text-shadow:0 1px 0 rgba(255,255,255,.08)}
+.cover-title .period{color:#aaa}
+.cover-quote{padding:28px 0 0 28px;border-left:1px solid rgba(255,255,255,.4);max-width:390px}
+.cover-quote blockquote{color:#f7f5f0;font-size:clamp(26px,3.1vw,43px)}
+.quote-mark{color:#aaa}
+.quote-credit{color:#aaa}
+.cover-bottom{border-top:1px solid rgba(255,255,255,.55)}
+.cover-deck{color:#f7f5f0}
+.cover-copy p{color:#aaa}
+.cover-copy b{color:#f7f5f0}
+.cover-meta{border-top:1px solid rgba(255,255,255,.55);color:#aaa}
+.cover-meta span:first-child{color:#f7f5f0}
+.hero .wrap:before{
+  content:"A STUDY IN POWER, INFORMATION & PUBLIC TRUST";
+  display:block;margin:0 0 30px;color:#aaa;
+  font:9px/1.4 Arial,sans-serif;letter-spacing:.22em;
+}
+.hero .wrap:after{
+  content:"SEOUL / 2024";position:absolute;right:0;top:0;
+  color:#aaa;font:9px Arial,sans-serif;letter-spacing:.2em;
+}
+.stats{background:#f8f7f4}
+@media(max-width:760px){
+  .hero{padding-top:46px}
+  .cover{align-items:start}
+  .cover-title{font-size:clamp(70px,16vw,135px)}
+  .cover-quote{border-left:1px solid rgba(255,255,255,.45)}
+  .hero .wrap:after{top:-23px;font-size:8px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero:before{animation:grainDrift 24s linear infinite alternate}
+  @keyframes grainDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-8px,5px,0)}}
+}
+
 </style>
 </head>
 <body>
