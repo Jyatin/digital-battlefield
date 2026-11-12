@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Digital Battlefield | Political Crisis Communication</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fa;--panel:#fff;--ink:#12203b;--mute:#566177;--line:#d9dfea;--acc:#b3202a;--sig:#1d4ed8;--ok:#1b7a57;--navy:#0d1830;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1120;--panel:#121b31;--ink:#e8ecf5;--mute:#9aa5ba;--line:#26314b;--acc:#ff6a70;--sig:#7aa5ff;--ok:#4fd1a1;--navy:#070d1a}}
+:root[data-theme="dark"]{--bg:#0a1120;--panel:#121b31;--ink:#e8ecf5;--mute:#9aa5ba;--line:#26314b;--acc:#ff6a70;--sig:#7aa5ff;--ok:#4fd1a1;--navy:#070d1a}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Instrument Sans",system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.15;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.1)}
+header.top .wrap{display:flex;align-items:center;gap:26px;height:60px}
+.logo{font-family:Fraunces,serif;font-weight:700;color:#fff;font-size:18px;margin-right:auto;white-space:nowrap}
+.logo span{color:#ff6a70}
+header.top a{color:#b9c3d8;text-decoration:none;font-size:14px;white-space:nowrap}header.top a:hover{color:#fff}
+.links{display:flex;gap:22px;overflow-x:auto}
+.tbtn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.hero{background:var(--navy);color:#fff;padding:72px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,64px);letter-spacing:-.015em}
+.hero p{color:#b9c3d8;font-size:18px;max-width:46ch;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none}
+.btn.p{background:#ff6a70;color:#0d1830}.btn.s{border:1px solid rgba(255,255,255,.35);color:#fff}
+.hv{position:relative;height:340px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.03)}
+.hv canvas{position:absolute;inset:0;width:100%;height:100%}
+.stats{background:var(--panel);border-bottom:1px solid var(--line)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:22px 16px;border-left:1px solid var(--line)}.stat:first-child{border-left:0;padding-left:0}
+.stat b{font-family:Fraunces,serif;font-size:30px;display:block}.stat span{color:var(--mute);font-size:14px}
+section{padding:72px 0}
+section+section{border-top:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:260px 1fr;gap:32px;margin-bottom:32px}
+.sh small{color:var(--acc);font-weight:600;font-size:14px;display:block;padding-top:8px;border-top:3px solid var(--acc);width:48px;margin-bottom:0;overflow:visible;white-space:nowrap}
+.sh h2{font-size:clamp(28px,4vw,38px)}.sh p{color:var(--mute);margin:10px 0 0;max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.card{padding:24px}.card h3{font-size:21px;margin-bottom:8px}.card p{margin:0 0 12px;color:var(--mute);font-size:15px}
+.card a{color:var(--sig);font-size:14px;text-decoration:none;font-weight:500}.card a:hover{text-decoration:underline}
+.card .tag{font-size:13px;color:var(--acc);font-weight:600;margin-bottom:10px;display:block}
+.panel{padding:18px}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:"Instrument Sans",sans-serif;fill:var(--ink);font-size:15px}
+.node rect,.node circle{fill:var(--panel);stroke:var(--ink);stroke-width:1.5;transition:.25s}
+.node{cursor:pointer;transition:opacity .25s}
+.node.on rect,.node.on circle{stroke:var(--acc);stroke-width:2.5;fill:color-mix(in srgb,var(--acc) 10%,var(--panel))}
+.edge{stroke:var(--mute);stroke-width:1.5;fill:none;transition:.25s}.edge.on{stroke:var(--acc);stroke-width:2.5}
+.dim{opacity:.18}
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;align-items:start}
+.side{padding:22px}.side h3{font-size:20px;margin-bottom:8px}.side p{color:var(--mute);margin:0 0 10px;font-size:15px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tl{display:flex;overflow-x:auto;padding:26px 4px 8px;position:relative;scroll-snap-type:x mandatory}
+.tl:before{content:"";position:absolute;left:0;right:0;top:48px;height:2px;background:var(--line)}
+.ev{flex:0 0 180px;scroll-snap-align:start;position:relative;padding-right:14px;background:none;border:0;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.ev i{display:block;width:16px;height:16px;border-radius:50%;background:var(--panel);border:3px solid var(--ink);position:relative;margin-bottom:12px;transition:.25s}
+.ev.on i{background:var(--acc);border-color:var(--acc);transform:scale(1.3)}
+.ev small{color:var(--mute);display:block}.ev strong{font-family:Fraunces,serif;font-size:17px;line-height:1.25;display:block;margin:4px 0}
+.detail{border-top:1px solid var(--line);margin-top:14px;padding-top:16px;color:var(--mute);min-height:70px}.detail b{color:var(--ink)}
+.pill{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.pill .panel{padding:22px 18px}
+.pill svg{width:40px;height:40px;margin-bottom:12px;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pill h3{font-size:20px}.pill p{margin:6px 0 0;color:var(--mute);font-size:14px}
+.refs{padding:24px}.refs li{margin-bottom:10px;color:var(--mute);font-size:15px}.refs a{color:var(--sig)}
+footer{background:var(--navy);color:#9fabc2;padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer b{color:#fff;font-family:Fraunces,serif;font-size:17px}
+button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid #6ea0ff;outline-offset:3px}
+@media (max-width:860px){.hero .wrap,.split,.sh{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.pill{grid-template-columns:1fr 1fr}.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0;padding-left:0}.hv{height:240px}.sh{gap:12px}section{padding:52px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="logo">The Digital <span>Battlefield</span></div>
+<nav class="links"><a href="#concepts">Concepts</a><a href="#eco">Ecosystem</a><a href="#flow">Escalation</a><a href="#case">Case study</a><a href="#pillars">Principles</a><a href="#refs">References</a></nav>
+<button class="tbtn" id="th" aria-label="Toggle light or dark theme">Theme</button>
+</div></header>
+
+<div class="hero"><div class="wrap">
+<div>
+<h1>How social media shapes political crises</h1>
+<p>An analytical guide to crisis communication in networked politics, anchored in South Korea’s martial law crisis of December 2024.</p>
+<div class="btns"><a class="btn p" href="#case">Explore the case</a><a class="btn s" href="#eco">See the ecosystem</a></div>
+</div>
+<div class="hv"><canvas id="net" aria-hidden="true"></canvas></div>
+</div></div>
+
+<div class="stats"><div class="wrap">
+<div class="stat"><b>190–0</b><span>Assembly vote against martial law</span></div>
+<div class="stat"><b>2</b><span>Core theories applied</span></div>
+<div class="stat"><b>5</b><span>Communication principles</span></div>
+<div class="stat"><b>KST</b><span>All times in UTC+9</span></div>
+</div></div>
+
+<section id="concepts"><div class="wrap">
+<div class="sh"><div><small>Framework</small></div><div><h2>Three lenses for reading a crisis</h2><p>Each lens explains a different part of how a political emergency unfolds online.</p></div></div>
+<div class="cards">
+<div class="card"><span class="tag">Agenda-setting</span><h3>What the public thinks about</h3><p>Media attention signals which issues matter. On social platforms, the agenda is set jointly by journalists, officials and ordinary users.</p><a href="https://doi.org/10.1086/267990" target="_blank" rel="noopener">McCombs and Shaw, 1972</a></div>
+<div class="card"><span class="tag">Framing</span><h3>How the issue is understood</h3><p>Frames select and stress certain aspects of events. Competing frames, such as defence of order or attack on democracy, compete for public acceptance.</p><a href="https://doi.org/10.1111/j.1460-2466.1993.tb01304.x" target="_blank" rel="noopener">Entman, 1993</a></div>
+<div class="card"><span class="tag">Information disorder</span><h3>What happens when facts are contested</h3><p>Misinformation, disinformation and malinformation differ in intent and harm. All three spread fastest when official explanations lag.</p><a href="#refs">Wardle and Derakhshan, 2017</a></div>
+</div>
+</div></section>
+
+<section id="eco"><div class="wrap">
+<div class="sh"><div><small>Diagram</small></div><div><h2>The political communication ecosystem</h2><p>Select an actor to trace who it exchanges information with. Every link runs in both directions.</p></div></div>
+<div class="split">
+<div class="panel"><svg viewBox="0 0 700 460" role="img" aria-label="Political communication ecosystem diagram">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker></defs>
+<g id="edges"></g><g id="nodes"></g></svg></div>
+<div class="panel side" aria-live="polite"><h3 id="ecoh">Choose an actor</h3><p id="ecop">Tap or select any node to highlight its information flows and read its role in a crisis.</p></div>
+</div>
+</div></section>
+
+<section id="flow"><div class="wrap">
+<div class="sh"><div><small>Flowchart</small></div><div><h2>From event to accountability</h2><p>Verification decides which path a crisis takes. Transparent communication gives institutions a way to steer it.</p></div></div>
+<div class="tabs" id="ft">
+<button aria-pressed="true" data-b="all">Full map</button><button aria-pressed="false" data-b="A">Verified path</button><button aria-pressed="false" data-b="B">Unverified path</button><button aria-pressed="false" data-b="S">Transparent response</button>
+</div>
+<div class="panel" style="max-width:760px;margin:0 auto"><svg id="fl" viewBox="0 0 700 690" role="img" aria-label="Political crisis escalation flowchart"></svg></div>
+</div></section>
+
+<section id="case"><div class="wrap">
+<div class="sh"><div><small>Case study</small></div><div><h2>Seoul, December 2024</h2><p>Select an event on the timeline. Visibility online mattered, but the decisive acts were constitutional ones taken by the National Assembly.</p></div></div>
+<div class="panel"><div class="tl" id="tl"></div><div class="detail" id="tlcap" aria-live="polite"></div></div>
+</div></section>
+
+<section id="pillars"><div class="wrap">
+<div class="sh"><div><small>Principles</small></div><div><h2>Five pillars of effective crisis communication</h2><p>Institutions that hold all five are better placed to keep public trust.</p></div></div>
+<div class="pill">
+<div class="panel"><svg viewBox="0 0 48 48"><path d="M26 4L10 27h12l-2 17 18-24H26z"/></svg><h3>Speed</h3><p>Fill the silence before rumour does.</p></div>
+<div class="panel"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8"/><path d="M24 3v8M24 37v8M3 24h8M37 24h8"/></svg><h3>Accuracy</h3><p>Verified facts with clear sources.</p></div>
+<div class="panel"><svg viewBox="0 0 48 48"><path d="M3 24s8-14 21-14 21 14 21 14-8 14-21 14S3 24 3 24z"/><circle cx="24" cy="24" r="6"/></svg><h3>Transparency</h3><p>Explain the reasoning behind decisions.</p></div>
+<div class="panel"><svg viewBox="0 0 48 48"><path d="M6 16h36M6 24h36M6 32h36"/><circle cx="24" cy="24" r="19"/></svg><h3>Consistency</h3><p>One account across every channel.</p></div>
+<div class="panel"><svg viewBox="0 0 48 48"><path d="M24 41S6 30 6 17a10 10 0 0118-6 10 10 0 0118 6c0 13-18 24-18 24z"/></svg><h3>Empathy</h3><p>Acknowledge public fear and loss.</p></div>
+</div>
+</div></section>
+
+<section id="refs"><div class="wrap">
+<div class="sh"><div><small>Sources</small></div><div><h2>References</h2><p>Foundational works cited on this page.</p></div></div>
+<div class="panel refs"><ul style="margin:0;padding-left:20px">
+<li>McCombs, M. and Shaw, D. (1972). The agenda-setting function of mass media. <i>Public Opinion Quarterly</i>, 36(2). <a href="https://doi.org/10.1086/267990" target="_blank" rel="noopener">doi.org/10.1086/267990</a></li>
+<li>Entman, R. (1993). Framing: Toward clarification of a fractured paradigm. <i>Journal of Communication</i>, 43(4). <a href="https://doi.org/10.1111/j.1460-2466.1993.tb01304.x" target="_blank" rel="noopener">doi.org/10.1111/j.1460-2466.1993.tb01304.x</a></li>
+<li>Wardle, C. and Derakhshan, H. (2017). <i>Information Disorder: Toward an Interdisciplinary Framework for Research and Policymaking.</i> Council of Europe.</li>
+</ul></div>
+</div></section>
+
+<footer><div class="wrap"><div><b>The Digital Battlefield</b><br>Managing political crises in the age of social media</div><div>POL371 · Political Crisis Management and Communication<br>Interactive companion to the blog</div></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),NS="http://www.w3.org/2000/svg";
+const mk=(t,a={},p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e};
+$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'};
+// hero network
+(()=>{const c=$('#net'),x=c.getContext('2d');let W,H,P=[];
+function size(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;P=Array.from({length:Math.min(40,W/12|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()<.14}))}
+size();addEventListener('resize',size);const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function draw(){x.clearRect(0,0,W,H);
+for(const p of P){if(!rm){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}}
+for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const a=P[i],b=P[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<110){x.globalAlpha=(1-d/110)*.5;x.strokeStyle=(a.r||b.r)?'#ff6a70':'#7aa5ff';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}
+x.globalAlpha=.95;for(const p of P){x.fillStyle=p.r?'#ff6a70':'#9db9ff';x.beginPath();x.arc(p.x,p.y,p.r?4:2.4,0,7);x.fill()}
+if(!rm)requestAnimationFrame(draw)}
+draw()})();
+// ecosystem
+const N=[["Government & institutions",350,50,"Issues official statements, holds legal authority and answers to parliament, courts and voters. Slow or unclear messaging leaves space for rumour."],
+["Political parties",597,174,"Mobilise supporters and contest the official account. Their framing can calm a crisis or deepen polarisation."],
+["News media & journalists",503,376,"Verify claims, question officials and decide what reaches wide audiences first. Their reporting links online visibility to public understanding."],
+["Social platforms",197,376,"Accelerate sharing and shape which frames travel furthest. Speed helps citizens coordinate but also helps falsehoods spread."],
+["Citizens & civil society",103,174,"React, amplify, organise and hold institutions to account, online and in person."]];
+const C=[350,230],E=[],nodes=[],eg=$('#edges'),ng=$('#nodes'),ea={'marker-start':'url(#ar)','marker-end':'url(#ar)',class:'edge'};
+const cn=mk('g',{class:'node',tabindex:0,role:'button'},ng);mk('circle',{cx:C[0],cy:C[1],r:56},cn);
+mk('text',{x:C[0],y:C[1]-3,'text-anchor':'middle'},cn).textContent='Digital';mk('text',{x:C[0],y:C[1]+17,'text-anchor':'middle'},cn).textContent='networks';nodes[5]=cn;
+N.forEach((n,i)=>E.push({el:mk('line',{...ea,x1:C[0],y1:C[1],x2:n[1],y2:n[2]},eg),a:i,b:5}));
+for(let i=0;i<5;i++){const a=N[i],b=N[(i+1)%5];E.push({el:mk('line',{...ea,x1:a[1],y1:a[2],x2:b[1],y2:b[2]},eg),a:i,b:(i+1)%5})}
+N.forEach((n,i)=>{const g=mk('g',{class:'node',tabindex:0,role:'button'},ng);mk('rect',{x:n[1]-92,y:n[2]-24,width:184,height:48,rx:8},g);
+const t=mk('text',{x:n[1],y:n[2]+5,'text-anchor':'middle'},g);t.textContent=n[0];t.style.fontSize='14px';nodes[i]=g});
+function pick(i){nodes.forEach((g,k)=>{const rel=k===i||E.some(e=>(e.a===i&&e.b===k)||(e.b===i&&e.a===k));g.classList.toggle('on',k===i);g.classList.toggle('dim',!rel)});
+E.forEach(e=>{const r=e.a===i||e.b===i;e.el.classList.toggle('on',r);e.el.classList.toggle('dim',!r)});
+$('#ecoh').textContent=i===5?'Digital networks':N[i][0];$('#ecop').textContent=i===5?'The shared layer connecting every actor, so a single message can reach all of them within minutes.':N[i][3]}
+nodes.forEach((g,i)=>{g.onclick=()=>pick(i);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(i)}}});
+// flowchart
+const F=$('#fl');mk('defs',{},F).innerHTML='<marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker>';
+const fn=[["Political event",350,20,"0"],["Information spreads online",350,92,"0"],["Public reaction",350,164,"0"],["Information verification",350,236,"0"],
+["Verified information",165,360,"A"],["Credible reporting",165,432,"A"],["Better public understanding",165,504,"A"],["Institutional accountability",165,576,"A"],
+["Unverified information",535,360,"B"],["Rumours & misinformation",535,432,"B"],["Confusion & polarisation",535,504,"B"],["Increased institutional pressure",535,576,"B"]];
+const w=230,h=46;
+const ar=(x1,y1,x2,y2,b)=>mk('path',{d:`M${x1} ${y1}L${x2} ${y2}`,class:'edge','marker-end':'url(#fa)','data-b':b},F);
+for(let i=0;i<3;i++)ar(350,fn[i][2]+h,350,fn[i+1][2],'0');
+ar(350,236+h,165,360,'A');ar(350,236+h,535,360,'B');
+for(const c of [165,535])for(let k=0;k<3;k++){const i=(c===165?4:8)+k;ar(c,fn[i][2]+h,c,fn[i+1][2],c===165?'A':'B')}
+fn.forEach(n=>{const g=mk('g',{'data-b':n[3]},F);mk('rect',{x:n[1]-w/2,y:n[2],width:w,height:h,rx:8,fill:'var(--panel)',stroke:n[3]==='A'?'var(--ok)':n[3]==='B'?'var(--acc)':'var(--ink)','stroke-width':2},g);
+mk('text',{x:n[1],y:n[2]+h/2+5,'text-anchor':'middle'},g).textContent=n[0]});
+const tg=mk('g',{'data-b':'S'},F);mk('rect',{x:130,y:640,width:440,height:46,rx:8,fill:'var(--sig)'},tg);
+mk('text',{x:350,y:669,'text-anchor':'middle',style:'fill:#fff;font-weight:600'},tg).textContent='Transparent institutional communication';
+mk('path',{d:'M350 640V300M350 300L535 345',class:'edge','data-b':'S',stroke:'var(--sig)','stroke-dasharray':'6 5','stroke-width':2.5,'marker-end':'url(#fa)'},F);
+mk('text',{x:362,y:560,style:'font-size:13px;fill:var(--sig)','data-b':'S'},F).textContent='redirects the spread';
+function showFlow(b){F.querySelectorAll('[data-b]').forEach(e=>{const v=e.dataset.b;let d=false;if(b!=='all'){if(b==='S')d=(v==='A'||v==='B');else d=(v!==b&&v!=='0')}e.classList.toggle('dim',d)})}
+document.querySelectorAll('#ft button').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('#ft button').forEach(x=>x.setAttribute('aria-pressed',x===btn));showFlow(btn.dataset.b)});
+// timeline
+const T=[["3 Dec, 22:27","Martial law declared","President Yoon Suk Yeol announces emergency martial law in a televised address."],
+["3–4 Dec, night","Crowds and livestreams","Citizens gather outside the National Assembly while footage spreads online."],
+["4 Dec, about 01:00","Assembly votes 190–0","Lawmakers who reached the chamber vote to demand that martial law be lifted."],
+["4 Dec, about 04:30","Martial law lifted","The government ends martial law after the cabinet meets."],
+["7 Dec","First impeachment vote fails","The motion falls short because most ruling-party members do not take part."],
+["14 Dec","Impeachment passes","The Assembly votes to impeach the president and suspend his powers."]];
+const tl=$('#tl'),tc=$('#tlcap');
+T.forEach(e=>{const b=document.createElement('button');b.className='ev';b.innerHTML=`<i></i><small>${e[0]}</small><strong>${e[1]}</strong>`;
+b.onclick=()=>{tl.querySelectorAll('.ev').forEach(x=>x.classList.remove('on'));b.classList.add('on');tc.innerHTML='<b>'+e[1]+'.</b> '+e[2]};tl.appendChild(b)});
+tl.firstChild.click();
+</script>
+</body>
+</html>
