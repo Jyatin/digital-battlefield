@@ -292,6 +292,43 @@ header.top{background:#faf7f0}
 .panel{background:#fffdf9}
 .photo-frame{background:#eee7db;border-color:#c8beaf}
 
+
+/* Editorial narrative treatment: a sequence, not a decorative landing page */
+.front-story{margin:20px 0 2px;border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
+.front-story-heading{display:flex;justify-content:space-between;gap:12px;padding:10px 0 9px;color:var(--accent);font:700 8px 'DM Sans',Arial,sans-serif;letter-spacing:.16em}
+.front-story-heading span+span{color:var(--muted)}
+.front-story-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule)}
+.front-story-grid article{position:relative;min-height:118px;padding:14px 17px 16px 0}
+.front-story-grid article+article{padding-left:17px;border-left:1px solid var(--rule)}
+.front-story-grid small{display:block;margin-bottom:9px;color:var(--accent);font:700 8px 'DM Sans',Arial,sans-serif;letter-spacing:.13em}
+.front-story-grid b{display:block;color:var(--ink);font:normal 20px/1.1 Georgia,serif}
+.front-story-grid p{margin:7px 0 0;color:var(--muted);font:11px/1.55 Georgia,serif}
+.cover{grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:4%;min-height:clamp(390px,42vw,540px)}
+.cover-title{font-size:clamp(57px,7.1vw,96px);line-height:.9;letter-spacing:-.065em;text-transform:none}
+.cover-title em{display:block;margin-top:.08em;color:var(--accent);font-style:italic}
+.cover-photo img{height:clamp(340px,39vw,490px);object-position:center 48%;filter:grayscale(100%) contrast(1.14) brightness(.94)}
+.photo-frame{padding:9px;background:#e9e0d2;border-color:#b6aa99;box-shadow:0 12px 28px rgba(35,27,18,.12)}
+.cover-photo figcaption{font-size:10px;line-height:1.55}
+.cover-photo figcaption b{font-size:8px}
+@media(max-width:800px){
+ .cover{grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:20px}
+ .cover-title{font-size:clamp(43px,6vw,64px)}
+ .cover-photo img{height:clamp(290px,42vw,370px)}
+ .front-story-grid article{min-height:130px}
+}
+@media(max-width:600px){
+ .cover{grid-template-columns:1fr;gap:18px}
+ .cover-title{font-size:clamp(48px,12vw,70px)}
+ .cover-photo{grid-row:2}
+ .cover-photo img{height:clamp(260px,72vw,390px)}
+ .front-story-grid{grid-template-columns:1fr 1fr}
+ .front-story-grid article{min-height:0;padding:13px 10px 14px 0}
+ .front-story-grid article+article{padding-left:12px}
+ .front-story-grid article:nth-child(3){padding-left:0;border-left:0;border-top:1px solid var(--rule)}
+ .front-story-grid article:nth-child(4){border-top:1px solid var(--rule)}
+ .front-story-heading{font-size:7px;letter-spacing:.1em}
+}
+
 </style>
 </head>
 <body>
@@ -307,18 +344,18 @@ header.top{background:#faf7f0}
   <div class="edition-line"><span>THE DIGITAL BATTLEFIELD</span><span>AN INTERACTIVE SPECIAL REPORT</span><span>ISSUE 001 — SEOUL</span></div>
   <div class="cover">
     <div class="cover-main">
-      <p class="breaking"><span>★</span> BREAKING DOWN THE INFORMATION CRISIS</p>
-      <h1 class="cover-title">When a crisis breaks, <em>who controls the story?</em></h1>
-      <p class="cover-deck">Inside the battle for public understanding — where institutions, journalists, platforms and citizens compete to define what is happening.</p>
-      <div class="cover-byline"><span>POLITICAL CRISIS COMMUNICATION</span><span>DECEMBER 2024 · SOUTH KOREA</span></div>
-      <div class="cover-actions"><a href="#case" class="cover-action primary">Explore the case <span>↗</span></a><a href="#eco" class="cover-action">Read the investigation <span>→</span></a></div>
+      <p class="breaking"><span>★</span> SPECIAL INVESTIGATION &nbsp; / &nbsp; SOUTH KOREA</p>
+      <h1 class="cover-title">The night the story <em>outran the state.</em></h1>
+      <p class="cover-deck">For six hours, a democracy watched events unfold in real time: soldiers moved toward parliament, citizens moved to stop them, and a nation tried to understand what was happening.</p>
+      <div class="cover-byline"><span>THE POLITICS OF CRISIS COMMUNICATION</span><span>SEOUL · 03—04 DECEMBER 2024</span></div>
+      <div class="cover-actions"><a href="#case" class="cover-action primary">Follow the six hours <span>↗</span></a><a href="#eco" class="cover-action">Meet the actors <span>→</span></a></div>
     </div>
     <figure class="cover-photo">
       <div class="photo-frame">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/%EC%84%9C%EC%9A%B8_%EA%B3%84%EC%97%84%EB%A0%B9.png/1280px-%EC%84%9C%EC%9A%B8_%EA%B3%84%EC%97%84%EB%A0%B9.png" alt="Citizens confront a military vehicle in Seoul during the December 2024 martial law crisis" fetchpriority="high">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Protesters_clashed_with_korean_soldiers_%282024-12-03~4%29.png" alt="Protesters and South Korean soldiers clash outside the National Assembly during the December 2024 martial law crisis" fetchpriority="high">
         <div class="photo-seal"><span>THE</span><b>PUBLIC<br>RECORD</b><span>SEOUL · 2024</span></div>
       </div>
-      <figcaption><b>01 / THE NIGHT THE STORY CHANGED</b><span>Citizens face an armoured military vehicle in Seoul on 4 December 2024. Photograph: Wikimedia Commons contributor · CC0 1.0.</span></figcaption>
+      <figcaption><b>01 / THE LINE BETWEEN POWER AND THE PUBLIC</b><span>Protesters confront soldiers during the martial-law crisis, 3–4 December 2024. Image: VoiceOfSeoul · Wikimedia Commons · CC BY 3.0.</span></figcaption>
     </figure>
   </div>
   <div class="cover-bottom">
@@ -329,6 +366,15 @@ header.top{background:#faf7f0}
     </div>
   </div>
   <div class="cover-meta"><span>POL371 / POLITICAL CRISIS MANAGEMENT</span><span>AN INTERACTIVE EDITORIAL</span><span>01 — 06</span></div>
+  <div class="front-story" aria-label="The six-hour sequence">
+    <div class="front-story-heading"><span>THE NIGHT IN FOUR MOMENTS</span><span>03—04 DECEMBER 2024 · KST</span></div>
+    <div class="front-story-grid">
+      <article><small>22:27</small><b>The announcement</b><p>Emergency martial law is declared. The country turns to screens for answers.</p></article>
+      <article><small>BEFORE MIDNIGHT</small><b>The mobilisation</b><p>Lawmakers, staff and citizens move toward the National Assembly.</p></article>
+      <article><small>01:02</small><b>The vote</b><p>190 lawmakers vote to demand the lifting of martial law.</p></article>
+      <article><small>04:30</small><b>The reversal</b><p>The Cabinet completes the process to lift the decree.</p></article>
+    </div>
+  </div>
 </div></div>
 
 <div class="stats"><div class="wrap">
