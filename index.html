@@ -329,6 +329,34 @@ header.top{background:#faf7f0}
  .front-story-heading{font-size:7px;letter-spacing:.1em}
 }
 
+
+/* CONTRAST CORRECTION — warm newsprint with proper editorial ink */
+:root[data-theme="dark"]{
+  --paper:#faf7f0!important;
+  --paper2:#fffdf9!important;
+  --ink:#171613!important;
+  --muted:#625b52!important;
+  --rule:#bdb3a4!important;
+  --accent:#9b3b32!important;
+  --blue:#465e66!important;
+  --night:#171816!important;
+  color-scheme:light!important;
+}
+body,header.top,.hero,section{background:#faf7f0!important;color:#171613!important}
+.paper-brand,.paper-meta b,.paper-date b,.paper-nav .links a,.cover-title,.cover-title em,.cover-deck,.cover-byline,.cover-quote,.front-story-grid b{color:#171613!important}
+.paper-meta,.paper-date,.edition-line,.cover-photo figcaption,.cover-copy p,.cover-meta{color:#625b52!important}
+.paper-nav .tbtn{color:#171613!important;border-color:#171613!important}
+.cover-title{font-weight:700!important;text-shadow:none!important;opacity:1!important}
+.cover-title em{color:#963c34!important}
+.breaking,.cover-photo figcaption b,.front-story-heading,.front-story-grid small,.cover-copy b{color:#963c34!important}
+.cover-deck{color:#29251f!important}
+.cover-action{color:#171613!important;border-color:#171613!important}
+.cover-action.primary{background:#963c34!important;border-color:#963c34!important;color:#fff!important}
+.front-story-grid p{color:#625b52!important}
+.stats{background:#f0e9dd!important}
+.panel,.card{background:#fffdf9!important;color:#171613!important}
+.photo-frame{background:#e9e0d2!important;border-color:#b6aa99!important}
+
 </style>
 </head>
 <body>
@@ -352,10 +380,10 @@ header.top{background:#faf7f0}
     </div>
     <figure class="cover-photo">
       <div class="photo-frame">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Protesters_clashed_with_korean_soldiers_%282024-12-03~4%29.png" alt="Protesters and South Korean soldiers clash outside the National Assembly during the December 2024 martial law crisis" fetchpriority="high">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Protesters_clashed_with_korean_soldiers_%282024-12-03~4%26pic2%29.png" alt="A tense confrontation between citizens and South Korean soldiers during the December 2024 martial law crisis" fetchpriority="high">
         <div class="photo-seal"><span>THE</span><b>PUBLIC<br>RECORD</b><span>SEOUL · 2024</span></div>
       </div>
-      <figcaption><b>01 / THE LINE BETWEEN POWER AND THE PUBLIC</b><span>Protesters confront soldiers during the martial-law crisis, 3–4 December 2024. Image: VoiceOfSeoul · Wikimedia Commons · CC BY 3.0.</span></figcaption>
+      <figcaption><b>01 / THE LINE BETWEEN POWER AND THE PUBLIC</b><span>Citizens and soldiers face one another during the martial-law crisis, 3 December 2024. Image: VoiceOfSeoul · Wikimedia Commons · CC BY 3.0.</span></figcaption>
     </figure>
   </div>
   <div class="cover-bottom">
