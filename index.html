@@ -139,6 +139,60 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 }
 @media(max-width:390px){.wrap{width:calc(100% - 26px)}.logo{font-size:16px}.tbtn{font-size:7px;padding:6px}.cover-title{font-size:15vw}.cover-copy{grid-template-columns:1fr}.cover-meta span:nth-child(2){display:none}#pillars .pill{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+ 
+/* FRONT PAGE — white-stock newspaper art direction */
+:root{--paper:#fff;--paper2:#fff;--ink:#171715;--muted:#66645f;--rule:#d6d3cc;--accent:#8b302b;--blue:#465e66}
+body{background:#fff;color:var(--ink)}
+header.top{background:#fff}
+.hero{background:#fff;padding:22px 0 18px}
+.hero:after{content:none}
+.hero .wrap:before{content:"THE DIGITAL BATTLEFIELD  /  SPECIAL REPORT";margin-bottom:21px;border-color:#171715;color:#555}
+.hero .wrap:after{content:"SEOUL  ·  DECEMBER 2024";color:#555}
+.cover{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:34px;min-height:0;align-items:stretch;padding:4px 0 24px}
+.cover-main{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:20px 0 12px}
+.cover-title{font-family:"Bodoni 72",Didot,"Times New Roman",serif;font-size:clamp(76px,8.8vw,126px);line-height:.79;letter-spacing:-.09em}
+.cover-title span:nth-child(2){margin-left:.02em}
+.cover-title span:nth-child(3){font-size:.53em;letter-spacing:-.075em;margin-top:.18em;white-space:normal}
+.cover-title .period{color:var(--accent)}
+.cover-deck{max-width:530px;margin:27px 0 18px;padding-top:16px;border-top:1px solid var(--ink);font:normal clamp(19px,2vw,25px)/1.3 Georgia,serif;letter-spacing:-.025em}
+.cover-byline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-top:10px;border-top:3px double var(--ink);color:var(--muted);font:700 8px Arial,sans-serif;letter-spacing:.13em}
+.cover-photo{align-self:stretch;display:flex;flex-direction:column;min-width:0;margin:0;padding:0;background:#fff}
+.cover-photo img{display:block;width:100%;height:clamp(340px,39vw,500px);object-fit:cover;object-position:center 57%;filter:grayscale(100%) contrast(1.08);border:1px solid #d6d3cc}
+.cover-photo figcaption{display:grid;grid-template-columns:max-content 1fr;gap:14px;padding:9px 0 0;color:#66645f;font:10px/1.45 Arial,sans-serif}
+.cover-photo figcaption span:first-child{color:var(--accent);font-size:8px;font-weight:700;letter-spacing:.12em;white-space:nowrap}
+.cover-bottom{grid-template-columns:.9fr 1.1fr;gap:34px;padding:18px 0 15px;border-top:3px double var(--ink)}
+.cover-quote{margin:0;padding:0 22px 0 0;border:0;font:normal clamp(20px,2.2vw,28px)/1.24 Georgia,serif;letter-spacing:-.025em}
+.cover-quote>span{display:block;color:var(--accent);font:48px/.7 Georgia,serif}
+.cover-quote small{display:block;margin-top:12px;color:var(--muted);font:700 8px Arial,sans-serif;letter-spacing:.15em}
+.cover-copy{gap:24px}
+.cover-copy p{font-size:12px;line-height:1.65}
+.cover-copy b{color:var(--accent)}
+.cover-meta{border-top:1px solid var(--ink)}
+.stats{background:#fff}
+.panel,.card{box-shadow:none}
+.documentary-photo{box-shadow:none}
+@media(max-width:800px){
+ .cover{grid-template-columns:1fr;gap:17px}
+ .cover-main{padding:10px 0 0}
+ .cover-title{font-size:clamp(72px,13vw,112px)}
+ .cover-photo img{height:clamp(250px,58vw,420px)}
+ .cover-bottom{grid-template-columns:1fr;gap:17px}
+}
+@media(max-width:700px){
+ .hero{padding:16px 0 14px}
+ .hero .wrap:before{margin-bottom:14px}
+ .cover{gap:14px;padding-bottom:16px}
+ .cover-main{padding-top:5px}
+ .cover-title{font-size:clamp(66px,15vw,100px)}
+ .cover-title span:nth-child(3){font-size:.54em}
+ .cover-deck{margin:18px 0 14px;font-size:20px}
+ .cover-photo img{height:clamp(235px,65vw,340px)}
+ .cover-photo figcaption{grid-template-columns:1fr;gap:3px;font-size:9px}
+ .cover-bottom{margin-top:0;padding-top:15px}
+ .cover-copy{grid-template-columns:1fr 1fr}
+}
+@media(max-width:390px){.cover-title{font-size:15vw}.cover-copy{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -150,15 +204,18 @@ button:focus-visible,.node:focus-visible,a:focus-visible{outline:2px solid var(-
 
 <div class="hero"><div class="wrap">
 <div class="cover">
-  <div class="cover-title"><span>THE</span><span>DIGITAL</span><span>BATTLEFIELD<span class="period">.</span></span></div>
-  <aside class="cover-quote">
-    <p class="quote-mark">“</p>
-    <blockquote>In a political crisis, the first battle is over what people believe is happening.</blockquote>
-    <p class="quote-credit">NOTES ON CRISIS COMMUNICATION<br>SEOUL · DECEMBER 2024</p>
-  </aside>
+  <div class="cover-main">
+    <div class="cover-title"><span>THE</span><span>DIGITAL</span><span>BATTLEFIELD<span class="period">.</span></span></div>
+    <p class="cover-deck">When a political crisis breaks, the struggle to define what is happening can move faster than the institutions expected to explain it.</p>
+    <div class="cover-byline"><span>AN INTERACTIVE EDITORIAL</span><span>POLITICAL CRISIS COMMUNICATION</span></div>
+  </div>
+  <figure class="cover-photo">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg/1280px-2024%EB%85%84_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EA%B3%84%EC%97%84_%EB%B0%98%EB%8C%80_%EC%8B%9C%EC%9C%84.jpg" alt="Crowds gather in Seoul during protests against martial law on 4 December 2024" fetchpriority="high">
+    <figcaption><span>SEOUL, 4 DECEMBER 2024</span><span>Citizens gather in protest after the declaration of martial law. Photograph: Hashflu / Wikimedia Commons · CC BY-SA 4.0.</span></figcaption>
+  </figure>
 </div>
 <div class="cover-bottom">
-  <p class="cover-deck">How social media shapes political crises — and how information, institutions and public action collide when events move faster than official explanations.</p>
+  <blockquote class="cover-quote"><span>“</span>In a political crisis, the first battle is over what people believe is happening.<small>THE EDITORIAL PREMISE</small></blockquote>
   <div class="cover-copy">
     <p><b>THE CASE</b><br>South Korea’s declaration of martial law on 3 December 2024 became a defining test of democratic institutions and networked public communication.</p>
     <p><b>THE QUESTION</b><br>Who gets to define a crisis while it is still unfolding: governments, journalists, platforms or the people watching?</p>
