@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Digital Battlefield | Political Crisis Communication</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#f3efe6;--paper2:#faf8f2;--ink:#191916;--muted:#716d64;--rule:#c9c2b5;--accent:#8d3029;--blue:#53656b;--night:#171816;color-scheme:light}
 :root[data-theme="dark"]{--paper:#1d1e1b;--paper2:#252622;--ink:#eee9df;--muted:#aaa498;--rule:#49483f;--accent:#d18a80;--blue:#a9b9bd;--night:#11120f;color-scheme:dark}
@@ -195,7 +198,7 @@ header.top{background:#fff}
 
 
 /* NEWSPAPER FRONT PAGE — inspired by a broadsheet editorial cover */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+/* Fonts are loaded in the document head for reliable rendering. */
 :root{--paper:#f5eee2;--paper2:#fbf7ef;--ink:#171613;--muted:#70685e;--rule:#bdb3a4;--accent:#8d3029;--blue:#465e66}
 body{background:#f5eee2;color:var(--ink)}
 header.top{background:#f5eee2;border-bottom:0}
@@ -204,7 +207,7 @@ header.top:before{display:none}
 .paper-meta,.paper-date{display:flex;flex-direction:column;gap:5px;color:var(--muted);font:9px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.09em}
 .paper-meta b,.paper-date b{color:var(--ink);font-size:9px;letter-spacing:.14em}
 .paper-date{text-align:right}
-.paper-brand{display:block;text-align:center;color:var(--ink)!important;text-decoration:none;font:clamp(36px,5.1vw,66px)/.95 'UnifrakturMaguntia',Georgia,serif!important;letter-spacing:0!important;text-transform:none!important}
+.paper-brand{display:block;text-align:center;color:var(--ink)!important;text-decoration:none;font:clamp(36px,5.1vw,66px)/.95 'UnifrakturMaguntia',Georgia,serif!important;font-weight:400;letter-spacing:0!important;text-transform:none!important}
 .paper-nav{border-bottom:3px double var(--ink)}
 .paper-nav .links{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:9px 0;overflow:visible}
 .paper-nav .links a{font:700 9px 'DM Sans',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
