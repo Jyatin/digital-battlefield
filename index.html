@@ -442,6 +442,162 @@ section{padding:clamp(58px,7vw,92px) 0}
  #pillars .pill>.panel{min-height:160px}
 }
 
+
+/* ART DIRECTION PASS — newspaper front page, photographic storytelling, editorial rhythm */
+:root{--paper:#f6f2e9;--paper2:#fffdf8;--ink:#171512;--muted:#686157;--rule:#bdb4a6;--accent:#8e302b;--blue:#465a60}
+body{background:var(--paper);font-size:16px}
+.wrap{width:min(1320px,calc(100% - 80px))}
+header.top{background:#fbf8f1}
+.paper-masthead{min-height:112px!important;display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:18px 0!important}
+.paper-masthead .mast-left,.paper-masthead .mast-right{display:flex;flex-direction:column;gap:5px;color:var(--muted);font:700 9px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.paper-masthead .mast-right{text-align:right}
+.logo{grid-column:2;grid-row:1;width:auto!important;margin:0!important;font-family:"UnifrakturMaguntia",Georgia,serif!important;font-size:clamp(38px,5vw,66px)!important;font-weight:400!important;letter-spacing:0!important;text-transform:none!important;line-height:.95!important}
+.logo span{color:var(--ink)}
+.links{padding:13px 0 11px!important;gap:clamp(12px,2.7vw,38px)!important}
+header.top a{font-size:10px!important;letter-spacing:.15em!important}
+.tbtn{top:17px;right:0;padding:8px 12px;font-size:9px}
+.hero{padding:28px 0 22px;background:var(--paper)}
+.hero .wrap{max-width:1320px}
+.hero .wrap:before{margin-bottom:26px;padding:10px 0}
+.cover{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(26px,4vw,58px);align-items:center;min-height:0}
+.cover-main{padding:14px 0 20px}
+.breaking{margin:0 0 25px!important;color:var(--accent)!important;font:700 10px Arial,sans-serif!important;letter-spacing:.2em!important}
+.cover-title{font-family:"Bodoni 72",Didot,"Times New Roman",serif!important;font-size:clamp(62px,7.5vw,112px)!important;line-height:.88!important;letter-spacing:-.075em!important;text-transform:none!important;max-width:720px}
+.cover-title em{color:var(--accent);font-style:italic}
+.cover-deck{max-width:630px;margin:23px 0 20px!important;font-size:clamp(19px,1.7vw,24px)!important;line-height:1.38!important}
+.cover-byline{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--rule);padding:11px 0;color:var(--muted);font:700 8px Arial,sans-serif;letter-spacing:.13em}
+.cover-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}
+.cover-action{display:inline-flex;align-items:center;gap:24px;padding:12px 16px;border:1px solid var(--ink);color:var(--ink)!important;text-decoration:none;font:700 9px Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;transition:background .2s,color .2s}
+.cover-action.primary{background:var(--accent);border-color:var(--accent);color:white!important}
+.cover-action:hover{background:var(--ink);color:white!important;border-color:var(--ink)}
+.cover-photo{align-self:stretch;display:flex;flex-direction:column;justify-content:center;min-width:0;margin:0;padding:10px;background:var(--paper2);border:1px solid #c8bdae;box-shadow:0 12px 34px rgba(34,25,15,.10)}
+.photo-frame{position:relative;overflow:hidden;background:#ded8cc}
+.cover-photo img{display:block;width:100%;height:clamp(340px,39vw,540px);object-fit:cover;object-position:center 48%;filter:grayscale(100%) contrast(1.08);transition:filter .5s,transform .7s}
+.cover-photo:hover img{filter:grayscale(75%) contrast(1.05);transform:scale(1.015)}
+.photo-seal{position:absolute;top:18px;right:18px;width:88px;height:88px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:#f4eee3;color:var(--accent);border:1px solid var(--accent);box-shadow:0 0 0 5px rgba(246,242,233,.85);text-align:center;transform:rotate(8deg)}
+.photo-seal span{font:700 7px Arial,sans-serif;letter-spacing:.13em}.photo-seal b{font:700 12px/1 Georgia,serif}
+.cover-photo figcaption{display:grid;grid-template-columns:max-content 1fr;gap:12px;padding:11px 2px 1px;color:var(--muted);font:10px/1.5 Arial,sans-serif}
+.cover-photo figcaption b{color:var(--accent);font-size:8px;letter-spacing:.12em}
+.cover-bottom{margin-top:24px;padding:20px 0 17px;grid-template-columns:.9fr 1.1fr;gap:6%;border-top:3px double var(--ink)}
+.cover-quote{padding-left:24px;border-left:2px solid var(--accent);font-size:clamp(20px,2.1vw,28px)!important;line-height:1.25!important}
+.cover-copy p{font-size:13px!important;line-height:1.7!important}
+.cover-meta{padding:11px 0}
+.front-story{margin-top:14px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:13px 0 15px}
+.front-story-heading{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px;color:var(--muted);font:700 8px Arial,sans-serif;letter-spacing:.16em}
+.front-story-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.front-story-grid article{padding:5px 18px 4px;border-left:1px solid var(--rule)}
+.front-story-grid article:first-child{padding-left:0;border:0}
+.front-story-grid small{display:block;margin-bottom:9px;color:var(--accent);font:700 9px Arial,sans-serif;letter-spacing:.12em}
+.front-story-grid b{font:normal 18px/1.1 Georgia,serif}
+.front-story-grid p{margin:7px 0 0;color:var(--muted);font:11px/1.55 Arial,sans-serif}
+.stats{background:#eee8dc}
+.stat{padding:20px 22px}
+.stat b{font-size:34px}
+section{padding:clamp(72px,8vw,112px) 0}
+section+section{border-top:1px solid var(--ink)}
+.sh{grid-template-columns:150px minmax(0,1fr);gap:42px;margin-bottom:38px;align-items:start}
+.sh small{font-size:9px;letter-spacing:.2em}
+.sh h2{font-size:clamp(38px,4.7vw,64px);line-height:.98;letter-spacing:-.055em;text-transform:none}
+.sh p{max-width:700px;font-size:16px;line-height:1.65}
+.cards{gap:14px;border:0}
+.card{position:relative;min-height:275px;padding:24px!important;background:var(--paper2)!important;border:1px solid #d4cbbd!important;box-shadow:0 7px 22px rgba(30,23,14,.045);transition:transform .25s,box-shadow .25s}
+.card+.card{border-left:1px solid #d4cbbd!important}
+.card:before{content:"";position:absolute;top:0;left:0;width:34px;height:3px;background:var(--accent)}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 32px rgba(30,23,14,.10)}
+.card .tag{margin-bottom:42px!important;font-size:9px!important}
+.card h3{font-size:clamp(24px,2.1vw,31px)!important;line-height:1.06!important}
+.card p{font-size:14px!important;line-height:1.72!important}
+.panel{background:var(--paper2);border-color:#d1c7b8;box-shadow:0 10px 28px rgba(30,23,14,.055)}
+#eco .split{grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:22px}
+#eco .split>.panel:first-child{padding:25px;min-height:530px;display:flex;align-items:center}
+#eco .split svg{width:100%;min-height:430px}
+.actor-card{min-height:530px!important;box-shadow:7px 8px 0 rgba(30,23,14,.08)!important}
+.actor-card-body{padding:clamp(30px,4vw,52px)!important}
+.actor-symbol{font-size:clamp(94px,9vw,132px)!important}
+.actor-card h3{font-size:clamp(32px,3.4vw,48px)!important;line-height:1.02!important}
+.actor-card p:not(.actor-kicker){font-size:15px!important;line-height:1.8!important}
+#flow .tabs{margin-bottom:20px}
+#flow .tabs button{font-size:9px;padding:13px 16px 12px 0;margin-right:20px}
+#flow .panel{max-width:980px!important;padding:28px 34px!important}
+#fl{max-width:900px!important;margin:0 auto}
+#case .case-note{margin-bottom:25px;padding:22px 26px;background:#eee8dc;border-left:3px solid var(--accent)}
+#case .case-note p{font-size:clamp(19px,2.2vw,26px);line-height:1.4}
+.documentary-grid{grid-template-columns:1.2fr .8fr;gap:22px;margin:32px 0}
+.documentary-photo{padding:10px;background:var(--paper2);border:1px solid #cfc5b6;box-shadow:0 10px 25px rgba(30,23,14,.07)}
+.documentary-photo img{height:clamp(300px,35vw,480px);filter:grayscale(100%) contrast(1.08)}
+.documentary-photo.lead img{height:clamp(360px,42vw,560px)}
+.documentary-photo figcaption{font-size:11px;line-height:1.6;padding:13px 5px 8px}
+#pillars .pill{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#pillars .pill>.panel{min-height:255px;padding:28px!important;transition:transform .2s,box-shadow .2s}
+#pillars .pill>.panel:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(30,23,14,.09)}
+#pillars .pill h3{font-size:29px}
+#pillars .pill p{font-size:14px;line-height:1.75}
+#refs .refs{padding:34px 42px}
+footer{background:#eae3d7!important}
+@media(max-width:900px){
+ .wrap{width:calc(100% - 48px)}
+ .paper-masthead{grid-template-columns:1fr!important;gap:10px!important;text-align:center}
+ .paper-masthead .mast-left,.paper-masthead .mast-right{display:none}
+ .logo{grid-column:1;grid-row:1}
+ .cover{grid-template-columns:1fr 1fr;gap:22px}
+ .cover-title{font-size:clamp(58px,8vw,84px)!important}
+ .cover-photo img{height:420px}
+ #eco .split{grid-template-columns:1fr 1fr}
+ #eco .split>.panel:first-child{min-height:450px}
+ #eco .split svg{min-height:360px}
+ .actor-card{min-height:450px!important}
+}
+@media(max-width:640px){
+ .wrap{width:calc(100% - 32px)}
+ .paper-masthead{min-height:78px!important;padding:13px 0!important}
+ .logo{font-size:38px!important}
+ .links{justify-content:flex-start!important}
+ .hero{padding-top:18px}
+ .hero .wrap:before{font-size:7px;letter-spacing:.1em}
+ .hero .wrap:after{display:none}
+ .cover{grid-template-columns:1fr;gap:20px}
+ .cover-main{padding:8px 0 0}
+ .cover-title{font-size:clamp(56px,13vw,86px)!important;line-height:.9!important}
+ .cover-deck{font-size:19px!important}
+ .cover-photo{order:2}
+ .cover-photo img{height:clamp(280px,78vw,420px)}
+ .cover-bottom{grid-template-columns:1fr;gap:18px}
+ .cover-copy{grid-template-columns:1fr 1fr;gap:14px}
+ .front-story-grid{grid-template-columns:1fr 1fr;row-gap:14px}
+ .front-story-grid article:nth-child(3){border-left:0;padding-left:0}
+ .front-story-grid article{padding:5px 12px}
+ .stats .wrap{grid-template-columns:1fr 1fr}
+ .stat{padding:16px 10px;border-left:1px solid var(--rule)}
+ .stat:nth-child(odd){border-left:0;padding-left:0}
+ section{padding:52px 0}
+ .sh{grid-template-columns:1fr;gap:12px;margin-bottom:24px}
+ .sh h2{font-size:clamp(36px,10vw,48px)}
+ .sh p{font-size:14px}
+ .cards{grid-template-columns:1fr;gap:12px}
+ .card{min-height:0;padding:22px!important}
+ .card .tag{margin-bottom:22px!important}
+ #eco .split{grid-template-columns:1fr}
+ #eco .split>.panel:first-child{min-height:320px;padding:12px}
+ #eco .split svg{min-height:270px}
+ .actor-card{min-height:390px!important}
+ .actor-card-body{padding:26px!important}
+ .actor-symbol{font-size:90px!important}
+ #flow .panel{padding:12px!important;overflow-x:auto}
+ #fl{min-width:560px}
+ .documentary-grid{grid-template-columns:1fr;gap:16px}
+ .documentary-photo img,.documentary-photo.lead img{height:auto;max-height:390px}
+ #pillars .pill{grid-template-columns:1fr 1fr;gap:10px}
+ #pillars .pill>.panel{min-height:190px;padding:19px!important}
+ #pillars .pill h3{font-size:23px}
+ #refs .refs{padding:22px}
+}
+@media(max-width:390px){
+ .logo{font-size:32px!important}
+ .front-story-grid{grid-template-columns:1fr}
+ .front-story-grid article{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:10px}
+ #pillars .pill{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -465,10 +621,10 @@ section{padding:clamp(58px,7vw,92px) 0}
     </div>
     <figure class="cover-photo">
       <div class="photo-frame">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Protesters_clashed_with_korean_soldiers_%282024-12-03~4%26pic2%29.png" alt="A tense confrontation between citizens and South Korean soldiers during the December 2024 martial law crisis" fetchpriority="high">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png/1280px-South_Korean_soldiers_beginning_to_form_a_line_outside_of_the_National_Assembly.png" alt="A tense confrontation between citizens and South Korean soldiers during the December 2024 martial law crisis" fetchpriority="high">
         <div class="photo-seal"><span>THE</span><b>PUBLIC<br>RECORD</b><span>SEOUL · 2024</span></div>
       </div>
-      <figcaption><b>01 / THE LINE BETWEEN POWER AND THE PUBLIC</b><span>Citizens and soldiers face one another during the martial-law crisis, 3 December 2024. Image: VoiceOfSeoul · Wikimedia Commons · CC BY 3.0.</span></figcaption>
+      <figcaption><b>01 / THE LINE BETWEEN POWER AND THE PUBLIC</b><span>South Korean soldiers form a line outside the National Assembly during the martial-law crisis, 4 December 2024. Photo: mujjingun / Wikimedia Commons · Public domain.</span></figcaption>
     </figure>
   </div>
   <div class="cover-bottom">
