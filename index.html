@@ -729,6 +729,61 @@ header.top .paper-brand{
  .cover-copy{grid-template-columns:1fr!important}
 }
 
+
+/* Editorial layout refinement: compact documentary cards and diagrams */
+.documentary-grid{
+  width:min(100%,1080px);
+  margin:22px auto 26px;
+  grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:14px;
+  align-items:start;
+}
+.documentary-photo{
+  padding:6px 6px 0;
+  box-shadow:0 3px 12px rgba(25,20,12,.045);
+}
+.documentary-photo img,
+.documentary-photo.lead img{
+  height:clamp(190px,22vw,285px);
+  max-height:285px;
+  object-fit:cover;
+}
+.documentary-photo figcaption{
+  padding:8px 4px 10px;
+  font-size:9px;
+  line-height:1.45;
+}
+.documentary-photo figcaption span:first-child{font-size:7px}
+#flow .panel{
+  width:min(100%,660px);
+  max-width:660px;
+  padding:14px 18px;
+  margin:0 auto;
+}
+#flow #fl{
+  display:block;
+  width:min(100%,570px);
+  max-height:560px;
+  margin:0 auto;
+}
+#eco .split{
+  grid-template-columns:minmax(0,1.12fr) minmax(260px,.78fr);
+  gap:14px;
+}
+#eco .split>.panel:first-child{padding:14px}
+#eco .split svg{min-height:0;max-height:390px}
+.actor-card{min-height:340px}
+#concepts .cards{max-width:1080px;margin-inline:auto}
+#concepts .card{min-height:205px;padding-top:15px;padding-bottom:16px}
+@media(max-width:700px){
+  .documentary-grid{grid-template-columns:1fr;max-width:520px;gap:14px}
+  .documentary-photo img,.documentary-photo.lead img{height:auto;max-height:300px;aspect-ratio:1.45/1}
+  #flow .panel{width:100%;padding:10px 6px}
+  #flow #fl{width:100%;max-height:none}
+  #eco .split{grid-template-columns:1fr}
+  .actor-card{min-height:300px}
+}
+
 </style>
 </head>
 <body>
